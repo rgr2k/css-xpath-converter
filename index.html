@@ -44,12 +44,12 @@
     $(function() {
       $("#toxpath").click(function() {
         var css = $("#fcss").val();
-        var xpath = util.toXPath(css);
+        var xpath = css2xpath(css);
         $("#fxpath").val(xpath);
       });
       $("#tocss").click(function() {
         var xpath = $("#fxpath").val();
-        var css = util.toCss(xpath);
+        var css = xpath2css(xpath);
         $("#fcss").val(css);
       });
     });
