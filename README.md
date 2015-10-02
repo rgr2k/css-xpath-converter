@@ -1,6 +1,6 @@
-# CSS XPath Converter
+# CSS/XPath Convert Online
 
-A simple web page to convert CSS to XPath and vice versa.
+A simple online tool to convert between CSS and XPath.
 
 https://rdsubhas.github.io/css-xpath-converter/
 
