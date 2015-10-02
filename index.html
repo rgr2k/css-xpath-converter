@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ES6 Generators Visualized">
+  <title>ES6 Generators Visualized</title>
+  <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/7.0.4/basscss.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body class="bg-darken-1">
+  <div class="container clearfix center p3">
+    <div class="border rounded p3 mb2 bg-white">
+      <h1 class="h1 mt0 mb3 center">CSS / XPath Converter</h1>
+      <div class="row">
+        <input type="text" class="block col-12 field center" id="fcss" placeholder="css selector" />
+      </div>
+      <div class="row center py2">
+        <button type="button" class="btn btn-outline blue" id="toxpath">
+          <span>CSS</span> <i class="fa fa-angle-double-down"></i> <span class="hide">to</span> <span>XPath</span>
+        </button>
+        <button type="button" class="btn btn-outline blue" id="tocss">
+          <span>XPath</span> <i class="fa fa-angle-double-up"></i> <span class="hide">to</span> <span>CSS</span>
+        </button>
+      </div>
+      <div class="row">
+        <input type="text" class="block col-12 field center" id="fxpath" placeholder="xpath expression" />
+      </div>
+    </div>
+    <p class="center h5 mt0">
+      <a href="https://github.com/rdsubhas/css-xpath-converter">
+        <i class="fa fa-fw fa-github"></i>rdsubhas/css-xpath-converter
+      </a>
+      &nbsp;|&nbsp; Based on
+      <a href="https://github.com/zackehh/csx-path">zackehh/csx-path</a>
+    </p>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+
+  <script language="javascript" type="text/javascript">
+    $(function() {
+      $("#toxpath").click(function() {
+        var css = $("#fcss").val();
+        var xpath = util.toXPath(css);
+        $("#fxpath").val(xpath);
+      });
+      $("#tocss").click(function() {
+        var xpath = $("#fxpath").val();
+        var css = util.toCss(xpath);
+        $("#fcss").val(css);
+      });
+    });
+  </script>
+</body>
+</html>
